@@ -17,7 +17,7 @@ def loading_model():
 cnn = loading_model()
 
 # App title and logo (full-page header)
-st.image("logo.png", use_column_width=True)  # Make the logo span the full width of the page
+st.image("logo.png", use_container_width=True)  # Use use_container_width instead of use_column_width
 st.title("X-Ray Classification [Tuberculosis/Normal]")
 st.write("---")  # Add a horizontal line for separation
 
@@ -30,7 +30,7 @@ if temp is not None:
     # Display the uploaded image
     st.header("Uploaded Image")
     image_display = Image.open(temp)
-    st.image(image_display, caption="Uploaded X-Ray Image", use_column_width=True)
+    st.image(image_display, caption="Uploaded X-Ray Image", use_container_width=True)  # Updated parameter
 
     # Save the uploaded file to a temporary file
     temp_file = NamedTemporaryFile(delete=False)
